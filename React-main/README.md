@@ -17,3 +17,75 @@ O JSX dentro do "return" define a estrutura final do componente. Colocou-se todo
 "{menu}" é a lista de pratos mapeada que é inserida dentro da estrutura HTML.
 
 O Menu é exportado para ser usado em outros arquivos do projeto.
+
+# Componentes do React - Parte 2:
+
+# Descrição das Alterações Feitas na Aula:
+
+Criação de um componente Menu em "React" com maior ênfase na estruturação e exibição do cardápio de forma detalhada e responsiva.
+
+Implementação do "useState" para gerenciar o estado dos pratos (dishes), com um array de objetos contendo informações sobre os pratos.
+
+Uso do componente "Media" do "Reactstrap" para exibir os pratos de forma organizada.
+Layout responsivo utilizando classes como container e row para adaptar o cardápio a diferentes tamanhos de tela.
+
+Modularização do código através da exportação do componente Menu.
+
+# MenuComponent.js:
+
+# Descrição do Arquivo:
+
+O arquivo MenuComponent.js contém a definição do componente Menu, que exibe o cardápio de pratos de um restaurante. Ele é responsável pela iteração sobre o "array" "dishes" e pela renderização de cada prato em um formato responsivo utilizando o componente "Media" do "Reactstrap".
+
+# Quais os imports utilizados?
+
+React, { useState }: Importa o "React" e o "hook useState" para criar e gerenciar o estado local do componente.
+
+Media do Reactstrap: Utilizado para estruturar a exibição dos pratos de forma organizada.
+
+Dishes (de dishes.js): Importa os dados dos pratos ("dishes") para serem utilizados no componente.
+
+# Há componentes? O que fazem?
+Menu: Componente principal que exibe o cardápio com todos os pratos.
+Media: Componente do "Reactstrap" utilizado dentro do Menu para exibir informações sobre cada prato (imagem, nome, preço, descrição).
+
+# Para que serve o onDishSelect no projeto?
+
+A função "onDishSelect" serve para manipular a seleção de um prato. Quando um prato é selecionado, essa função pode ser chamada para mostrar detalhes adicionais ou atualizar o estado do aplicativo.
+
+# Para que serve o renderDish?
+
+O "renderDish" é uma função responsável por exibir a informação de cada prato individualmente, utilizando as propriedades de cada item dentro do "array" "dishes". Ele é chamado dentro do map para renderizar os pratos dinamicamente.
+
+# Para que serve o props.dishes.map?
+O "props.dishes.map" é utilizado para iterar sobre o "array" "dishes", criando um novo componente Media para cada prato. Cada prato é exibido com sua imagem, nome, descrição e preço.
+
+# dishes.js
+# Descrição do Arquivo:
+
+O arquivo "dishes.js" contém um "array" de objetos, onde cada objeto representa um prato do cardápio, com suas respectivas propriedades.
+
+# Quais as propriedades?
+"id": Identificador único do prato.
+"name": Nome do prato.
+"image": Caminho para a imagem do prato.
+"category": Categoria do prato (exemplo: "mains", "desserts").
+"price": Preço do prato.
+"description": Descrição do prato.
+
+# Que tipo de data é utilizado?
+
+O arquivo dishes.js utiliza um array de objetos. Cada objeto contém as propriedades de um prato, como "id", "name", "image", "category", "price" e "description".
+
+# App.js:
+
+# Descrição do Arquivo
+
+O arquivo App.js serve como o ponto de entrada principal do aplicativo. Ele importa o componente Menu e o utiliza para exibir o cardápio com os pratos, gerenciando o estado dos pratos e passando-os como props para o componente Menu.
+
+# Para que serve o const [dishes]?
+O const [dishes] é utilizado para declarar o estado local que armazena os dados do cardápio (pratos). Esse estado pode ser atualizado com novos dados, se necessário, e serve como fonte de dados para o componente Menu.
+
+# Menu dishes={dishes} /
+
+A linha Menu dishes={dishes} / está passando o estado dishes (que contém os pratos) como props para o componente Menu. Isso permite que o Menu tenha acesso aos dados do cardápio e possa renderizar cada prato dinamicamente, utilizando a iteração com map para exibir as informações de cada prato.
